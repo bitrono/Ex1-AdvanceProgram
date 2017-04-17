@@ -51,7 +51,6 @@ namespace MazeAdapter
 
             // Print the maze.
             //Console.WriteLine(dfsMaze.ToString());
-
             StatePool<Position> spDfs = new StatePool<Position>();
             //Adapter adDfs = new Adapter(2, 2, 0, 0, 1, 1, "test Dfs", spDfs);
             Maze maze = dfsMaze.Generate(500, 500);
@@ -59,7 +58,7 @@ namespace MazeAdapter
             Adapter adDfs = new Adapter(maze, spDfs);
             ISearcher<Position> dfs = new Dfs<Position>();
             Solution<Position> solDfs = dfs.search(adDfs);
-            //Console.WriteLine(adDfs.ToJson(solDfs)); // Creates the solution in Json format.
+            Console.WriteLine(Adapter.ToJson(solDfs, "test")); // Creates the solution in Json format.
             
             /*
             StatePool<Position> spBfs = new StatePool<Position>();

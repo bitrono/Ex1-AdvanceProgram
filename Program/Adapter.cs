@@ -113,7 +113,7 @@ namespace MazeAdapter
         /// </summary>
         /// <param name="sol">The solution.</param>
         /// <returns>Json of the solution.</returns>
-        public string ToJson(Solution<Position> sol)
+        static public string ToJson(Solution<Position> sol, string mazeName)
         {
 
             StringBuilder directionSb = new StringBuilder();
@@ -142,7 +142,7 @@ namespace MazeAdapter
                 }
             }
 
-            SolutionJson sj = new SolutionJson(this.maze.Name, directionSb.ToString(),
+            SolutionJson sj = new SolutionJson(mazeName, directionSb.ToString(),
                 sol.numOfNodesEvaluated.ToString());
 
             return JsonConvert.SerializeObject(sj);
