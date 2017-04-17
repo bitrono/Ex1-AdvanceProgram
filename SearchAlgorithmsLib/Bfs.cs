@@ -84,10 +84,10 @@ namespace SearchAlgorithmsLib
                         State<T> currState = priorityQueue.Dequeue();
 
                         // Find the relevant state in the priority queue.
-                        while (!currState.Equals(s))
+                        while (this.priorityQueue.Count > 0 && !currState.Equals(s))
                         {
                             tempQueue.Enqueue(currState);
-                            currState = tempQueue.Dequeue();
+                            currState = this.priorityQueue.Dequeue();
                         }
 
                         // Check if the cost of the current successor is cheaper than the cost of the
@@ -97,7 +97,7 @@ namespace SearchAlgorithmsLib
                             currState = s;
                         }
 
-                        closed.Add(priorityQueue.Dequeue());
+                        closed.Add(currState);
                         this.numOfNodesEvaluted++;
 
                         // Return all the states back to the priority queue.
@@ -107,6 +107,7 @@ namespace SearchAlgorithmsLib
                             currState = tempQueue.Dequeue();
                         }
 
+                        this.priorityQueue.Enqueue(currState);
                     }
                 }
             }
