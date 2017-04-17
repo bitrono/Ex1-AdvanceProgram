@@ -14,7 +14,9 @@ namespace MazeAdapter
 
         public AlgorithmFactory<Position> algorithmFac { get; } // Algorithm Factory.
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
         public Program()
         {
             this.algorithmFac = new AlgorithmFactory<Position>();
@@ -45,22 +47,30 @@ namespace MazeAdapter
         {
 
             IMazeGenerator dfsMaze = new DFSMazeGenerator();
-            dfsMaze.Generate(2, 2);
+            
 
             // Print the maze.
-            Console.WriteLine(dfsMaze.ToString());
+            //Console.WriteLine(dfsMaze.ToString());
 
             StatePool<Position> spDfs = new StatePool<Position>();
-            Adapter adDfs = new Adapter(2, 2, 0, 0, 1, 1, "test Dfs", spDfs);
+            //Adapter adDfs = new Adapter(2, 2, 0, 0, 1, 1, "test Dfs", spDfs);
+            Maze maze = dfsMaze.Generate(500, 500);
+            Console.WriteLine(maze.ToString());
+            Adapter adDfs = new Adapter(maze, spDfs);
             ISearcher<Position> dfs = new Dfs<Position>();
             Solution<Position> solDfs = dfs.search(adDfs);
-            Console.WriteLine(adDfs.ToJson(solDfs)); // Creates the solution in Json format.
-
+            //Console.WriteLine(adDfs.ToJson(solDfs)); // Creates the solution in Json format.
+            
+            /*
             StatePool<Position> spBfs = new StatePool<Position>();
-            Adapter adBfs = new Adapter(2, 2, 0, 0, 1, 1, "test Bfs", spBfs);
+            // Adapter adBfs = new Adapter(10, 10, 0, 0, 8, 1, "test Bfs", spBfs);
+            Maze maze = dfsMaze.Generate(500, 500);
+            Console.WriteLine(maze.ToString());
+            Adapter adBfs = new Adapter(maze, spBfs);
             ISearcher<Position> bfs = new Bfs<Position>();
             Solution<Position> solBfs = bfs.search(adBfs);
-            Console.WriteLine(adBfs.ToJson(solBfs));
+            //Console.WriteLine(adBfs.ToJson(solBfs));
+            */
         }
     }
 }

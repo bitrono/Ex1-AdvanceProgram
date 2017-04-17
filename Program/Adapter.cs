@@ -15,27 +15,62 @@ namespace MazeAdapter
         public Maze maze { get; set; }
         private StatePool<Position> statePool;
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
+        /// <param name="row">number of rows of maze.</param>
+        /// <param name="col">number of cols of maze.</param>
+        /// <param name="startX">x coordinate of start point.</param>
+        /// <param name="startY">y coordinate of start point.</param>
+        /// <param name="endX">x coordinate of end point.</param>
+        /// <param name="endY">y coordinate of end point.</param>
+        /// <param name="mazeName">name of maze.</param>
+        /// <param name="sp">state pool.</param>
         public Adapter(int row, int col, int startX, int startY, int endX, int endY,
             string mazeName, StatePool<Position> sp)
         {
             this.maze = new Maze(row, col);
+            Console.WriteLine(this.maze.ToString());
             maze.Name = mazeName;
             maze.InitialPos = new Position(startX, startY);
             maze.GoalPos = new Position(endX, endY);
             this.statePool = sp;
         }
 
+        /// <summary>
+        /// Ctor.
+        /// </summary>
+        /// <param name="maze">maze object.</param>
+        /// <param name="sp">state pool.</param>
+        public Adapter(Maze maze, StatePool<Position> sp)
+        {
+            this.maze = maze;
+            this.statePool = sp;
+        }
+
+        /// <summary>
+        /// Returns the inital state.
+        /// </summary>
+        /// <returns>position of initial state.</returns>
         public State<Position> getInitialState()
         {
             return new State<Position>(this.maze.InitialPos);
         }
 
+        /// <summary>
+        /// Returns the goal state.
+        /// </summary>
+        /// <returns>position of goal state.</returns>
         public State<Position> getGoalState()
         {
             return new State<Position>(this.maze.GoalPos);
         }
 
+        /// <summary>
+        /// Returns all the possible states.
+        /// </summary>
+        /// <param name="s">Position current state.</param>
+        /// <returns>States relative to s.</returns>
         public List<State<Position>> getAllPossibleStates(State<Position> s)
         {
 
@@ -73,6 +108,11 @@ namespace MazeAdapter
             return positionList;
         }
 
+        /// <summary>
+        /// Converts the solution into Json format.
+        /// </summary>
+        /// <param name="sol">The solution.</param>
+        /// <returns>Json of the solution.</returns>
         public string ToJson(Solution<Position> sol)
         {
 

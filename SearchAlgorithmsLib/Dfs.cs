@@ -9,7 +9,9 @@ namespace SearchAlgorithmsLib
     public class Dfs<T> : StackSearcher<T>
     {
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
         public Dfs()
             : base()
         {

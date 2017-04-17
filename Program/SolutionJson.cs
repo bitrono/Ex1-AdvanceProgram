@@ -12,6 +12,12 @@ namespace MazeAdapter
         public string solution { get; set; }
         public string evalNodes { get; set; }
 
+        /// <summary>
+        /// Ctor.
+        /// </summary>
+        /// <param name="name">Name of the maze.</param>
+        /// <param name="solution">The solution.</param>
+        /// <param name="evalNodes">The number of nodes evaluated.</param>
         public SolutionJson(string name, string solution, string evalNodes)
         {
             this.name = name;

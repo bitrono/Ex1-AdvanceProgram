@@ -13,7 +13,10 @@ namespace SearchAlgorithmsLib
         public double cost { get; set; } // cost to reach this state (set by a setter)
         public State<T> cameFrom { get; set; } // the state we came from to this state (setter)
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
+        /// <param name="state">The state.</param>
         public State(T state)
         {
             this.state = state;
@@ -21,11 +24,21 @@ namespace SearchAlgorithmsLib
             this.cameFrom = null;
         }
 
+        /// <summary>
+        /// Checks if state is equal to another state.
+        /// </summary>
+        /// <param name="s">State to compare with.</param>
+        /// <returns>Boolean if state is equal.</returns>
         public bool Equals(State<T> s)
         {
             return state.Equals(s.state);
         }
 
+        /// <summary>
+        /// Compares this object with other object.
+        /// </summary>
+        /// <param name="obj">Other object.</param>
+        /// <returns>Whether states are equal, greater or less than.</returns>
         public int CompareTo(object obj)
         {
 

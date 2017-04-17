@@ -13,7 +13,9 @@ namespace SearchAlgorithmsLib
         public PriorityQueue<State<T>> priorityQueue { get; set; } // Priority queue.
         public int numOfNodesEvaluted { get; set; } // Number of nodes that were evaluated.
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
         public QueueSearcher()
         {
             this.priorityQueue = new PriorityQueue<State<T>>();
@@ -22,13 +24,19 @@ namespace SearchAlgorithmsLib
         // Searches for the path.
         public abstract Solution<T> search(ISearchable<T> searchable);
 
-        // Adds a state to the queue.
+        /// <summary>
+        /// Adds a state to the queue.
+        /// </summary>
+        /// <param name="s">The state that should be added.</param>
         protected void addToQueue(State<T> s)
         {
             priorityQueue.Enqueue(s);
         }
 
-        // Gets how many nodes have been evaluated.
+        /// <summary>
+        /// Gets how many nodes have been evaluated.
+        /// </summary>
+        /// <returns>The number of nodes evaluated.</returns>
         public int getNumberOfNodesEvaluate()
         {
             return this.numOfNodesEvaluted;

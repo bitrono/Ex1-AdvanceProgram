@@ -10,7 +10,9 @@ namespace SearchAlgorithmsLib
     {
         private Dictionary<int, State<T>> statePool;
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
         public StatePool()
         {
             this.statePool = new Dictionary<int, State<T>>();

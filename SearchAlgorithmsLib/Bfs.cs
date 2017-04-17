@@ -11,7 +11,9 @@ namespace SearchAlgorithmsLib
     public class Bfs<T> : QueueSearcher<T>
     {
 
-        // Ctor.
+        /// <summary>
+        /// Ctor.
+        /// </summary>
         public Bfs()
             : base()
         {
