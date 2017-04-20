@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace MazeAdapter
 {
+
+    /// <summary>
+    /// Solution that assists with json format.
+    /// </summary>
     public class SolutionJson
     {
         public string name { get; set; }

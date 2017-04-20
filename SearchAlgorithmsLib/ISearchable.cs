@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// Searchable objects interface.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface ISearchable<T>
     {
 

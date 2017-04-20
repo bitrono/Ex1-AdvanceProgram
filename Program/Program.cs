@@ -9,6 +9,10 @@ using SearchAlgorithmsLib;
 
 namespace MazeAdapter
 {
+
+    /// <summary>
+    /// The program options.
+    /// </summary>
     public class Program
     {
 

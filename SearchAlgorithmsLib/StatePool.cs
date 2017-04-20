@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// Pool of states.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class StatePool<T>
     {
         private Dictionary<int, State<T>> statePool;

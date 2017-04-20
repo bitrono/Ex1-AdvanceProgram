@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// Factory design pattern. Creates Algorithm objects.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class AlgorithmFactory<T>
     {
 

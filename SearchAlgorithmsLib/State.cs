@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 namespace SearchAlgorithmsLib
 {
 
+    /// <summary>
+    /// The state of a searchable object.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class State<T> : IComparable
     {
         public T state { get; set; } // the state represented by a string

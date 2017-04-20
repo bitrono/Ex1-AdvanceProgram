@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// Searchers that use a stack.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class StackSearcher<T> : ISearcher<T>
     {
 

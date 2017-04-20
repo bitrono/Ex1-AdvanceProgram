@@ -9,6 +9,10 @@ using SearchAlgorithmsLib;
 
 namespace MazeAdapter
 {
+
+    /// <summary>
+    /// Main function.
+    /// </summary>
     public class Start
     {
         static void Main(string[] args)

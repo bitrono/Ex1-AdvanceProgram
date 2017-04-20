@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// Dfs Algorithm.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Dfs<T> : StackSearcher<T>
     {
 

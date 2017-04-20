@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 
 namespace MazeAdapter
 {
+
+    /// <summary>
+    /// Adapter design pattern.
+    /// </summary>
     public class Adapter : ISearchable<Position>
     {
 

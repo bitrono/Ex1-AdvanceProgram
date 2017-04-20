@@ -7,6 +7,11 @@ using Academy.Collections.Generic;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// Searchers that use priority queues.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class QueueSearcher<T> : ISearcher<T>
     {
 

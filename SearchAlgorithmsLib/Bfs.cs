@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 namespace SearchAlgorithmsLib
 {
 
+    /// <summary>
+    /// Bfs Algorithm.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Bfs<T> : QueueSearcher<T>
     {
 

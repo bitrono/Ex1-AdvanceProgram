@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
+
+    /// <summary>
+    /// The solution of a algorithm.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Solution<T>
     {
         public List<State<T>> nodeList { get; set; } // List of all the nodes in the shortest path.
