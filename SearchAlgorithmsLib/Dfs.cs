@@ -52,6 +52,7 @@ namespace SearchAlgorithmsLib
         public override Solution<T> search(ISearchable<T> searchable)
         {
             this.addToStack(searchable.getInitialState());
+            this.numOfNodesEvaluated++;
 
             HashSet<State<T>> closed = new HashSet<State<T>>();
 
@@ -61,7 +62,6 @@ namespace SearchAlgorithmsLib
 
                 State<T> n = this.stack.Pop(); // inherited from Searcher, removes the best state
                 closed.Add(n);
-                this.numOfNodesEvaluated++;
 
                 // Checks if the destination was reached.
                 if (n.state.ToString().Equals(searchable.getGoalState().state.ToString()))
@@ -80,6 +80,7 @@ namespace SearchAlgorithmsLib
                         s.cameFrom = n; // set parent node.
                         s.cost = n.cost + 1; // update the cost of the path.
                         this.addToStack(s);
+                        this.numOfNodesEvaluated++;
                     }
                     // Else check if cost is cheaper and add to closed hash set.
                     else if (!closed.Contains(s) && this.stack.Contains(s))
@@ -102,7 +103,6 @@ namespace SearchAlgorithmsLib
                         }
 
                         closed.Add(this.stack.Pop());
-                        this.numOfNodesEvaluated++;
 
                         // Return all the states back to the stack.
                         while (tempQueue.Count > 0)

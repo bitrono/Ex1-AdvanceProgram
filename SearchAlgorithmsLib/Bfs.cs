@@ -54,6 +54,7 @@ namespace SearchAlgorithmsLib
         {
 
             this.addToQueue(searchable.getInitialState());
+            this.numOfNodesEvaluted++;
 
             HashSet<State<T>> closed = new HashSet<State<T>>();
 
@@ -63,7 +64,6 @@ namespace SearchAlgorithmsLib
 
                 State<T> n = this.priorityQueue.Dequeue(); // inherited from Searcher, removes the best state
                 closed.Add(n);
-                this.numOfNodesEvaluted++;
 
                 // Checks if the destination was reached.
                 if (n.state.ToString().Equals(searchable.getGoalState().state.ToString()))
@@ -82,6 +82,7 @@ namespace SearchAlgorithmsLib
                         s.cameFrom = n; // set parent node.
                         s.cost = n.cost + 1; // update the cost of the path.
                         addToQueue(s);
+                        this.numOfNodesEvaluted++;
                     }
                     // Else check if cost is cheaper and add to closed hash set.
                     else if (!closed.Contains(s) && priorityQueue.Contains(s))
@@ -104,7 +105,6 @@ namespace SearchAlgorithmsLib
                         }
 
                         closed.Add(currState);
-                        this.numOfNodesEvaluted++;
 
                         // Return all the states back to the priority queue.
                         while (tempQueue.Count > 0)
