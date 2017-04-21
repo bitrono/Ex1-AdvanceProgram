@@ -25,7 +25,7 @@ namespace MazeAdapter
 
             // The following gets 2 rows, 2 coloms and 0 (Bfs algorithm), Runs the bfs algorithm
             // and returns the solution to the algorithm.
-            // Solution<Position> pos = pg.Solve(2, 2, 0); 
+             //Solution<Position> pos = pg.Solve(2, 2, 0); 
 
         }
 

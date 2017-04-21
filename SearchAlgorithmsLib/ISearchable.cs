@@ -15,13 +15,13 @@ namespace SearchAlgorithmsLib
     {
 
         // Returns initial state of searchable object.
-        State<T> getInitialState();
+        State<T> GetInitialState();
 
         // Returns goal state of searchable object.
-        State<T> getGoalState();
+        State<T> GetGoalState();
 
         // Returns all possible states from certain state.
-        List<State<T>> getAllPossibleStates(State<T> s);
+        List<State<T>> GetAllPossibleStates(State<T> s);
 
     }
 }

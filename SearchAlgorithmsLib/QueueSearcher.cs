@@ -27,13 +27,13 @@ namespace SearchAlgorithmsLib
         }
 
         // Searches for the path.
-        public abstract Solution<T> search(ISearchable<T> searchable);
+        public abstract Solution<T> Search(ISearchable<T> searchable);
 
         /// <summary>
         /// Adds a state to the queue.
         /// </summary>
         /// <param name="s">The state that should be added.</param>
-        protected void addToQueue(State<T> s)
+        protected void AddToQueue(State<T> s)
         {
             priorityQueue.Enqueue(s);
         }
@@ -42,7 +42,7 @@ namespace SearchAlgorithmsLib
         /// Gets how many nodes have been evaluated.
         /// </summary>
         /// <returns>The number of nodes evaluated.</returns>
-        public int getNumberOfNodesEvaluate()
+        public int GetNumberOfNodesEvaluate()
         {
             return this.numOfNodesEvaluted;
         }

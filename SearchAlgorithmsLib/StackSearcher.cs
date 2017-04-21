@@ -26,13 +26,13 @@ namespace SearchAlgorithmsLib
         }
 
         // Searches for the path.
-        public abstract Solution<T> search(ISearchable<T> searchable);
+        public abstract Solution<T> Search(ISearchable<T> searchable);
 
         /// <summary>
         /// Adds a state to the stack.
         /// </summary>
         /// <param name="s">The state that needs to be added to the stack.</param>
-        protected void addToStack(State<T> s)
+        protected void AddToStack(State<T> s)
         {
             stack.Push(s);
         }
@@ -41,7 +41,7 @@ namespace SearchAlgorithmsLib
         /// Gets number of nodes that have been evaluated.
         /// </summary>
         /// <returns>The number of nodes evaluated.</returns>
-        public int getNumberOfNodesEvaluate()
+        public int GetNumberOfNodesEvaluate()
         {
             return this.numOfNodesEvaluated;
         }

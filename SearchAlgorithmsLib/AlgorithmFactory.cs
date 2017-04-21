@@ -25,10 +25,10 @@ namespace SearchAlgorithmsLib
             // Finds which specific algorithm to create.
             switch (algorithm)
             {
-                case 1:
+                case 0:
                     return new Bfs<T>();
 
-                case 2:
+                case 1:
                     return new Dfs<T>();
             }
 

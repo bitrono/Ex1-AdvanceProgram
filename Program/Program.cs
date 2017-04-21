@@ -40,7 +40,7 @@ namespace MazeAdapter
             StatePool<Position> sp = new StatePool<Position>();
             Adapter ad = new Adapter(row, colom, 0, 0, 1, 1, "test", sp);
             ISearcher<Position> algorithm = this.algorithmFac.CreateAlgorithm(algorithmId);
-            return algorithm.search(ad);
+            return algorithm.Search(ad);
 
         }
 
@@ -61,7 +61,7 @@ namespace MazeAdapter
             Console.WriteLine(maze.ToString());
             Adapter adDfs = new Adapter(maze, spDfs);
             ISearcher<Position> dfs = new Dfs<Position>();
-            Solution<Position> solDfs = dfs.search(adDfs);
+            Solution<Position> solDfs = dfs.Search(adDfs);
             Console.WriteLine(Adapter.ToJson(solDfs, "test")); // Creates the solution in Json format.
             
             /*

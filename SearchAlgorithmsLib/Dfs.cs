@@ -28,7 +28,7 @@ namespace SearchAlgorithmsLib
         /// </summary>
         /// <param name="finalState">The object of the final state.</param>
         /// <returns>The Solution of the algorithm.</returns>
-        private Solution<T> backTrace(State<T> finalState)
+        private Solution<T> BackTrace(State<T> finalState)
         {
 
             Solution<T> dfsSolution = new Solution<T>(this.numOfNodesEvaluated);
@@ -49,9 +49,9 @@ namespace SearchAlgorithmsLib
         /// </summary>
         /// <param name="searchable">The searchable object.</param>
         /// <returns>The Solution of the algorithm.</returns>
-        public override Solution<T> search(ISearchable<T> searchable)
+        public override Solution<T> Search(ISearchable<T> searchable)
         {
-            this.addToStack(searchable.getInitialState());
+            this.AddToStack(searchable.GetInitialState());
             this.numOfNodesEvaluated++;
 
             HashSet<State<T>> closed = new HashSet<State<T>>();
@@ -64,12 +64,12 @@ namespace SearchAlgorithmsLib
                 closed.Add(n);
 
                 // Checks if the destination was reached.
-                if (n.state.ToString().Equals(searchable.getGoalState().state.ToString()))
+                if (n.state.ToString().Equals(searchable.GetGoalState().state.ToString()))
                 {
-                    return this.backTrace(n);
+                    return this.BackTrace(n);
                 }
 
-                List<State<T>> successors = searchable.getAllPossibleStates(n);
+                List<State<T>> successors = searchable.GetAllPossibleStates(n);
 
                 // Iterate through all the successors and update the path.
                 foreach (State<T> s in successors)
@@ -79,7 +79,7 @@ namespace SearchAlgorithmsLib
                     {
                         s.cameFrom = n; // set parent node.
                         s.cost = n.cost + 1; // update the cost of the path.
-                        this.addToStack(s);
+                        this.AddToStack(s);
                         this.numOfNodesEvaluated++;
                     }
                     // Else check if cost is cheaper and add to closed hash set.

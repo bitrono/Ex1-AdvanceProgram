@@ -27,7 +27,7 @@ namespace SearchAlgorithmsLib
         /// Adds a state to the state pool.
         /// </summary>
         /// <param name="state">The state that will be added to the state pool.</param>
-        public void addToStatePool(T state)
+        public void AddToStatePool(T state)
         {
 
             // Checks if the State already exists in pool.
@@ -42,7 +42,7 @@ namespace SearchAlgorithmsLib
         /// </summary>
         /// <param name="state">The state that will be retrieved from the state pool.</param>
         /// <returns>The wanted state.</returns>
-        public State<T> getState(T state)
+        public State<T> GetState(T state)
         {
 
             if (this.statePool.ContainsKey(state.ToString().GetHashCode()))
