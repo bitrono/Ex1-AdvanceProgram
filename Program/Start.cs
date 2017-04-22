@@ -19,13 +19,15 @@ namespace MazeAdapter
         {
 
             Program pg = new Program();
-            pg.CompareSolvers();
+            IMazeGenerator dfsMaze = new DFSMazeGenerator();
+            Maze maze = dfsMaze.Generate(100, 100);
+            //pg.CompareSolvers();
 
             // Example of Usage:
 
             // The following gets 2 rows, 2 coloms and 0 (Bfs algorithm), Runs the bfs algorithm
             // and returns the solution to the algorithm.
-             //Solution<Position> pos = pg.Solve(2, 2, 0); 
+            Solution<Position> pos = pg.Solve(maze, 0); 
 
         }
 

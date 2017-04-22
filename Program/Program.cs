@@ -34,11 +34,11 @@ namespace MazeAdapter
         /// <param name="colom">Num of coloms.</param>
         /// <param name="algorithmId">The id of the relevant algorithm to run.</param>
         /// <returns>The solution to the algorithm. </returns>
-        public Solution<Position> Solve(int row, int colom, int algorithmId)
+        public Solution<Position> Solve(Maze maze, int algorithmId)
         {
 
             StatePool<Position> sp = new StatePool<Position>();
-            Adapter ad = new Adapter(row, colom, 0, 0, 1, 1, "test", sp);
+            Adapter ad = new Adapter(maze, sp);
             ISearcher<Position> algorithm = this.algorithmFac.CreateAlgorithm(algorithmId);
             return algorithm.Search(ad);
 
