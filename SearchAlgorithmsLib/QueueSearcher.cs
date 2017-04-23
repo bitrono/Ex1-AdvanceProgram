@@ -33,7 +33,11 @@ namespace SearchAlgorithmsLib
             this.priorityQueue = new PriorityQueue<State<T>>();
         }
 
-        // Searches for the path.
+        /// <summary>
+        /// Searches for the shortest path.
+        /// </summary>
+        /// <param name="searchable">The searchable object.</param>
+        /// <returns>The Solution of the algorithm.</returns>
         public abstract Solution<T> Search(ISearchable<T> searchable);
 
         /// <summary>
