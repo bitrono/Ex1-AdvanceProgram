@@ -16,7 +16,14 @@ namespace MazeAdapter
     public class Adapter : ISearchable<Position>
     {
 
+        /// <summary>
+        /// The maze instance.
+        /// </summary>
         public Maze maze { get; set; }
+
+        /// <summary>
+        /// The state pool that holds all the instansiated states.
+        /// </summary>
         private StatePool<Position> statePool;
 
         /// <summary>
