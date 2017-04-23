@@ -16,7 +16,10 @@ namespace MazeAdapter
     public class Program
     {
 
-        public AlgorithmFactory<Position> algorithmFac { get; } // Algorithm Factory.
+        /// <summary>
+        /// The algorithm Factory.
+        /// </summary>
+        public AlgorithmFactory<Position> algorithmFac { get; }
 
         /// <summary>
         /// Ctor.
